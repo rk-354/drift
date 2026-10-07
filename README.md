@@ -17,7 +17,8 @@ A blue water drop appears near the clock. Right-click or left-click it for the m
 
 ## Share it
 
-Send `share\Drift.zip`, which is 24 KB, by email, Teams or a OneDrive link. The person receiving it should:
+Download **Drift.zip** from the [latest release](https://github.com/rk-354/drift/releases/latest), which is 24 KB, or
+send that link to someone. The person receiving it should:
 
 1. Unzip it anywhere, for example in Downloads.
 2. Open the `Drift` folder and double-click `install.cmd`.
@@ -30,7 +31,7 @@ Start menu for Drift, open the file location, and run `uninstall.cmd`.
 If Windows shows "Windows protected your PC", click **More info** and then **Run anyway**. This appears for any
 script that came from email or the web.
 
-After changing `drift.ps1`, rebuild the zip from the six files: `drift.ps1`, `Start-Drift.vbs`, `install.ps1`,
+After changing `drift.ps1`, rebuild the zip and attach it to a new release. The zip holds six files: `drift.ps1`, `Start-Drift.vbs`, `install.ps1`,
 `install.cmd`, `uninstall.cmd` and `README.md`.
 
 ## What it does
