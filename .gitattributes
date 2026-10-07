@@ -1,0 +1,5 @@
+# cmd.exe and wscript need Windows line endings; keep PowerShell the same.
+*.cmd text eol=crlf
+*.vbs text eol=crlf
+*.ps1 text eol=crlf
+*.md  text eol=lf
