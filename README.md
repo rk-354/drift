@@ -1,82 +1,210 @@
-# Drift — screen breaks and water
+<div align="center">
 
-A small Windows tray app. It reminds you to look away from the screen every 30 minutes and to drink water every hour.
-It uses only what is built into Windows (PowerShell 5.1 and WinForms), so there is nothing to install. It needs no admin
-rights and makes no network calls.
+# ☁️ Drift
 
-## Start it
+**Gentle reminders to rest your eyes and drink some water, without breaking your flow.**
 
-| To | Do |
+<img src="docs/card-break.png" width="460" alt="Drift screen-break card: pastel lavender sky with soft clouds, an eye icon, and Start, Snooze and Skip buttons">
+
+![Windows 10 · 11](https://img.shields.io/badge/Windows-10%20%C2%B7%2011-0078D4?style=flat-square&logo=windows&logoColor=white)
+![PowerShell 5.1](https://img.shields.io/badge/PowerShell-5.1-5391FE?style=flat-square&logo=powershell&logoColor=white)
+![No admin rights](https://img.shields.io/badge/admin%20rights-not%20needed-2DC4BE?style=flat-square)
+![Offline](https://img.shields.io/badge/network-none-818CF8?style=flat-square)
+![Size](https://img.shields.io/badge/download-24%20KB-FBBF24?style=flat-square)
+
+[**Download**](https://github.com/rk-354/drift/releases/latest) · [What it does](#-a-day-with-drift) · [Install](#-install-in-30-seconds) · [FAQ](#-faq)
+
+</div>
+
+<br>
+
+Drift lives quietly in your system tray. Every so often a soft card drifts up from the corner of the screen to remind you
+to look away, take a sip, or take a breath. Then it gets out of the way.
+
+There is nothing to install and no account to create. It doesn't need admin rights, never uses the internet, and stores
+nothing outside your own PC.
+
+<br>
+
+## 🌤 A day with Drift
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**10:00 · Good morning**<br>
+<sub>A fresh-start nudge: sit tall, sip some water, and pick today's one priority.</sub>
+
+<img src="docs/card-morning.png" alt="Morning card in warm sunrise gold">
+
+</td>
+<td width="50%" valign="top">
+
+**Every 30 min · Rest your eyes**<br>
+<sub>Look 20 feet away for 20 seconds. Press Start and the eye becomes a countdown ring.</sub>
+
+<img src="docs/card-countdown.png" alt="Screen-break card showing the countdown ring">
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**Every 60 min · Sip some water**<br>
+<sub>A row of droplets fills up as you go, against your daily target.</sub>
+
+<img src="docs/card-water.png" alt="Water card in sky aqua with three of eight droplets filled">
+
+</td>
+<td width="50%" valign="top">
+
+**16:00 · Afternoon push**<br>
+<sub>The dip is normal. Stretch, refocus, finish strong.</sub>
+
+<img src="docs/card-afternoon.png" alt="Afternoon card in ocean teal with a rising arrow">
+
+</td>
+</tr>
+</table>
+
+> The morning and afternoon cards each have **14 wordings with the same meaning**. A different one appears each day, so
+> the cards never feel stale.
+
+<br>
+
+## ✨ Why it doesn't get annoying
+
+|  |  |
 |---|---|
-| Run it now | Double-click `Start-Drift.vbs` |
-| Run it now and at every sign-in | Double-click `install.cmd` |
-| Stop it and remove it from sign-in | Double-click `uninstall.cmd` |
-| Try it with short intervals | `wscript Start-Drift.vbs demo`: a break after 1 minute, water after 2 minutes |
+| 🫧 **Never steals focus** | Cards appear without taking the keyboard, so you can keep typing mid-sentence. |
+| 🎬 **Knows when you're busy** | It waits while you are presenting, watching full-screen video, or running anything full screen. |
+| ⏸️ **Easy to pause** | Pause for 30 min, 1 h, 2 h, or until tomorrow, straight from the tray. |
+| 🕊️ **One card at a time** | Reminders queue politely instead of stacking up. |
+| ☀️ **Daily cards once a day** | The morning and afternoon cards appear once each. If your PC was off at 10:00, the morning card still appears until 13:00. |
+| 🔒 **Private by design** | No network, no telemetry. Your history stays in `%APPDATA%\Drift` on your own PC. |
 
-A blue water drop appears near the clock. Right-click or left-click it for the menu.
+<br>
 
-## Share it
+## 🚀 Install in 30 seconds
 
-Download **Drift.zip** from the [latest release](https://github.com/rk-354/drift/releases/latest), which is 24 KB, or
-send that link to someone. The person receiving it should:
+1. **[Download Drift.zip](https://github.com/rk-354/drift/releases/latest)** and unzip it anywhere.
+2. Open the `Drift` folder and double-click **`install.cmd`**.
+3. A message confirms Drift is running. Look for the 💧 near the clock.
 
-1. Unzip it anywhere, for example in Downloads.
-2. Open the `Drift` folder and double-click `install.cmd`.
-3. Read the message box, which confirms Drift is installed and running. They can then delete the unzipped folder.
+That's it. Drift now starts by itself every time you sign in, and you can delete the unzipped folder.
 
-The installer copies Drift into `%LOCALAPPDATA%\Programs\Drift` and adds it to Startup and the Start menu. It needs no
-admin rights. Running a newer zip's `install.cmd` updates an existing install in place. To remove Drift, search the
-Start menu for Drift, open the file location, and run `uninstall.cmd`.
+> [!TIP]
+> Don't see the drop? Windows 11 tucks new tray icons behind the **^** arrow on the taskbar. Drag the drop out onto the
+> taskbar so it's always visible.
 
-If Windows shows "Windows protected your PC", click **More info** and then **Run anyway**. This appears for any
-script that came from email or the web.
+<br>
 
-After changing `drift.ps1`, rebuild the zip and attach it to a new release. The zip holds six files: `drift.ps1`, `Start-Drift.vbs`, `install.ps1`,
-`install.cmd`, `uninstall.cmd` and `README.md`.
+## 🎛 The tray menu
 
-## What it does
-
-The reminders appear as soft cards in the bottom-right corner. Each has a pastel sky background with slowly drifting
-clouds and flowing waves, rounded corners and a shadow, and fades in. Screen breaks use lavender and water uses aqua.
-During a break the eye icon turns into a countdown ring. The cards are drawn by the `Drift.ReminderCard` C# class
-inside `drift.ps1`, which Windows compiles when the app starts.
-
-- **Screen break, every 30 min.** A card appears bottom-right with a tip (look 20 feet away, blink, stretch). It offers
-  **Start 20s break** (a countdown, after which the card closes by itself), **Snooze 5 min**, and **Skip**.
-- **Water, every 60 min.** A card shows today's glasses against your target of 8. It offers **Done**, **Snooze** and
-  **Skip**. You can also log a glass at any time from the tray menu.
-- **Morning card, 10:00.** A warm sunrise card with a fresh-start message: sit tall, have some water, and pick today's
-  one priority.
-- **Afternoon card, 16:00.** An ocean-teal card with a keep-going message: the dip is normal, so push through and finish
-  strong.
-  - Each card has 14 wordings with the same meaning. A different one is shown each day, and the same one all day.
-  - Each card appears once a day. If the PC was off at the time, the morning card still appears until 13:00 and the
-    afternoon card until 19:00. A restart never repeats a card.
-  - Either card can be switched off in Settings, and both can be previewed from the tray menu under **Preview daily
-    cards**.
-- **It stays out of the way.**
-  - Cards never take keyboard focus, so they can't swallow what you are typing.
-  - While Windows reports you are presenting, in full-screen video or in a full-screen app, reminders wait until you
-    finish.
-  - **Pause** from the menu for 30 minutes, 1 hour, 2 hours or until tomorrow.
-- **Summary** (from the menu): today's water and breaks, and the last 7 days.
-
-Everything above can be changed in **Settings**: both intervals, break length, daily target, snooze length,
-sound, turning either reminder off, and starting with Windows.
-
-## Where things are kept
-
-`%APPDATA%\Drift\`, which is your own profile:
-
-- `settings.json`
-- `history.csv`: one row per day (glasses, breaks taken, breaks skipped), kept for a year.
-- `error.log`: only appears if something went wrong.
-
-## Check the logic
+Right-click the drop:
 
 ```
-powershell -ExecutionPolicy Bypass -File drift.ps1 -SelfTest
+  Take a break now
+  I drank a glass of water
+  Water reminder now
+  Preview daily cards     ▸  Morning · Afternoon
+  ─────────────────────
+  Pause reminders         ▸  30 min · 1 h · 2 h · until tomorrow
+  ─────────────────────
+  Today and this week…       your water & break summary
+  Settings…
+  Exit
 ```
 
-This runs the scheduling checks: when a reminder is due, which one wins when both are, full-screen
-deferral, pause, and one card at a time.
+<br>
+
+## ⚙️ Make it yours
+
+Everything is adjustable in **Settings**:
+
+| Setting | Default |
+|---|---|
+| Screen-break reminder | every **30 min** |
+| Guided break length | **20 s** |
+| Water reminder | every **60 min** |
+| Daily water target | **8** glasses |
+| Snooze | **5 min** |
+| Morning card | **on**, 10:00 |
+| Afternoon card | **on**, 16:00 |
+| Sound | **on** |
+| Start with Windows | **on** |
+
+<br>
+
+## 💬 FAQ
+
+<details>
+<summary><b>Windows says "Windows protected your PC". Is it safe?</b></summary>
+<br>
+Windows shows that warning for any script that came from email or the web. Click <b>More info</b> and then <b>Run
+anyway</b>. Drift is one plain, readable PowerShell script of about 1,300 lines. You can open <code>drift.ps1</code> in Notepad and
+read every line before you run it.
+</details>
+
+<details>
+<summary><b>Do I need admin rights?</b></summary>
+<br>
+No. Drift installs to <code>%LOCALAPPDATA%\Programs\Drift</code> and adds itself to your own Startup folder. Nothing is
+written outside your user profile.
+</details>
+
+<details>
+<summary><b>How do I update it?</b></summary>
+<br>
+Download the newer zip and run its <code>install.cmd</code>. It replaces the old version in place and keeps your settings
+and history.
+</details>
+
+<details>
+<summary><b>How do I remove it?</b></summary>
+<br>
+Search the Start menu for <b>Drift</b>, right-click it and choose <b>Open file location</b>, then run
+<code>uninstall.cmd</code>. Your history in <code>%APPDATA%\Drift</code> is kept, so delete that folder too if you want
+a clean slate.
+</details>
+
+<details>
+<summary><b>Will it pop up during my presentation?</b></summary>
+<br>
+No. When Windows reports that you are presenting or something is running full screen, Drift holds every reminder until
+you are done.
+</details>
+
+<br>
+
+## 🛠 Under the hood
+
+- **PowerShell 5.1 + WinForms only.** Both ship with every Windows 10 and 11 machine, so there are no dependencies.
+- **The cards are hand-drawn in C#**, compiled on the fly with `Add-Type`. That gives the pastel sky, drifting clouds and
+  flowing waves, rounded corners, a soft shadow, the countdown ring and a fade-in, with no flicker.
+- **Crisp on high-DPI screens.** The process is DPI-aware, so text stays sharp at 125 % and 150 % scaling.
+- **The scheduling logic is self-tested:**
+
+  ```powershell
+  powershell -ExecutionPolicy Bypass -File drift.ps1 -SelfTest
+  ```
+
+- **Try it with short intervals:** `wscript Start-Drift.vbs demo` shows a break after 1 minute and water after 2.
+
+<details>
+<summary><b>Project layout</b></summary>
+
+```
+drift.ps1          the app: tray, scheduling, cards, settings
+Start-Drift.vbs    starts it with no console window
+install.cmd        one-click install / update   → install.ps1
+uninstall.cmd      one-click removal            → install.ps1 -Uninstall
+docs/              the card images in this README
+```
+</details>
+
+<br>
+
+<div align="center">
+<sub>Made with ☁️ for screen-heavy days · look away, sip, breathe.</sub>
+</div>
